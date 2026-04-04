@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi Tiết Sản Phẩm</title>
+    <link rel="stylesheet" href="">
+    <style>
+        .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px 40px;
+    font-family: sans-serif;
+}
+
+.detail-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    margin-top: 30px;
+}
+
+.detail-images {
+    flex: 0 0 460px;
+    max-width: 460px;
+}
+
+.detail-images .image-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    background: #fafafa;
+}
+
+.detail-images .image-box img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.35s ease;
+}
+
+.detail-images .img-default {
+    opacity: 1;
+}
+
+.detail-images .img-hover {
+    opacity: 0;
+}
+
+.detail-images .image-box:hover .img-default {
+    opacity: 0;
+}
+
+.detail-images .image-box:hover .img-hover {
+    opacity: 1;
+}
+
+.detail-info {
+    flex: 1;
+    max-width: 520px;
+    padding-top: 8px;
+}
+
+.detail-info h1 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 0 0 14px;
+    color: #222;
+}
+
+.price {
+    font-size: 30px;
+    color: #d70018;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.description {
+    background: #f9f9f9;
+    padding: 18px;
+    border-radius: 10px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 24px;
+}
+
+.description strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.btn-back {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.btn-add-cart {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 6px;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.btn-add-cart:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 8px 14px;
+    border-radius: 8px;
+
+    background: #f3f3f3;
+    border: 1px solid #e5e5e5;
+
+    transition: all 0.25s ease;
+}
+
+/* hover */
+.btn-back:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+    transform: translateX(-3px);
+}
+
+/* hiệu ứng mũi tên */
+.btn-back::before {
+    content: "←";
+    transition: transform 0.25s ease;
+}
+
+/* hover mũi tên trượt nhẹ */
+.btn-back:hover::before {
+    transform: translateX(-3px);
+}
+
+@media (max-width: 900px) {
+    .detail-wrapper {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .detail-images {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .detail-info {
+        max-width: 100%;
+    }
+
+    .detail-info h1 {
+        font-size: 26px;
+    }
+
+    .price {
+        font-size: 26px;
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="btn-back">Home</a>
+
+    <div id="hien-thi-chi-tiet" class="detail-wrapper">
+        </div>
+</div>
+
+<script src="list.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const idCanTim = Number(params.get('id'));
+
+    const sp = danhSachSanPham.find(item => item.id === idCanTim);
+    const vungChua = document.getElementById('hien-thi-chi-tiet');
+
+    if (sp) {
+        vungChua.innerHTML = `
+        <div class="detail-images">
+            <div class="image-box">
+                <img class="img-default" src="${sp.hinhAnh1}" alt="${sp.tenSanPham}">
+                <img class="img-hover" src="${sp.hinhAnh2}" alt="${sp.tenSanPham}">
+            </div>
+        </div>
+
+        <div class="detail-info">
+            <h1>${sp.tenSanPham}</h1>
+            <div class="price">${sp.gia.toLocaleString()}đ</div>
+            <div class="description">
+                <strong>Mô tả sản phẩm</strong>
+                <p>${sp.moTa || "Chưa có mô tả cho sản phẩm này."}</p>
+            </div>
+            <button class="btn-add-cart" onclick="alert('Đã thêm vào giỏ!')">
+                Thêm vào giỏ hàng
+            </button>
+        </div>
+    `;
+    } else {
+        vungChua.innerHTML = "<h3>Sản phẩm không tồn tại!</h3>";
+    }
+</script>
+
+</body>
+</html>
