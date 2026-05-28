@@ -1,0 +1,343 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    margin-top: 0;
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    height: 90px;
+    position: sticky;
+    top: -30px; /* FIX 3: đổi từ -30px thành 0 để sticky ổn định hơn khi zoom */
+    z-index: 1000;
+}
+
+.header-top{
+    background-color: #737373;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-top-left ul{
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    justify-content:left;
+}
+
+.header-top-left ul li a{
+    text-decoration: none;
+    line-height: 30px;
+    color: white;
+    font-size: 15px;
+}
+
+.header-top-right{
+    color: white;
+    font-size: 15px;
+    margin-right: 50px;
+}
+
+.header-top-right a{
+    display: inline-block;
+    line-height: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.header-top-right a:hover{
+    background-color: #3a3a3a;
+    
+}
+
+.wapper{
+    position: relative;
+    background-color: white;
+    padding: 0 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 30px;
+    width: 100%;
+}
+
+.wapper .logo a{
+    color: #DDD;
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.wapper .nav-links{
+    display:inline-flex;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links li a{
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px 15px;
+    background: #FFF; /* có thể thay*/
+    border-radius: 5px;
+}
+
+.nav-links li a:hover{
+    background: #CCC;
+}
+
+.nav-links .drop-menu{
+    background: #CCC;
+    width: 180px;
+    top: 80px; /* Lưu ý khoảng cách này nếu rê chuột bị mất menu */
+    line-height: 45px;
+    position: absolute;
+    padding: 0;
+    border: 1px solid #d1cfcf;
+    margin: 0;
+    
+    /* ĐÃ THAY ĐỔI 1: Giấu menu con đi từ đầu */
+    display: none; 
+}
+
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box{
+    top: 45px;
+    
+    /* ĐÃ THAY ĐỔI 2: Hiển thị menu lên khi đưa chuột vào */
+    display: block; 
+    
+    /* transition: all 0.1s ease; */ /* Ghi chú: Dùng display thì transition sẽ không hoạt động nữa */
+}
+
+.drop-menu li a{
+    width: 100%;
+    display: block;
+    padding: 0 0 0 15px;
+    font-weight: 400;
+    border-radius: 1px;
+}
+
+.mega-box{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    
+    /* ĐÃ THAY ĐỔI 3: Giấu mega menu đi từ đầu */
+    display: none; 
+    
+    /* transition: all 0.3s ease; */
+}
+
+.mega-box .content{
+    background: #FFF;
+    padding: 25px 20px;
+    display: flex;
+    border: 1px solid #eee;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.content .row{
+    width: calc(25% - 30px);
+    line-height: 45px;
+}
+
+.content .row img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content .row header{
+    font-size: 20px;
+}
+
+.content .row .mega-links{
+    border-left: 1px solid rgba(255,255,255,0.09);
+    margin-left: -40px;
+}
+
+.content .row:nth-child(1) .mega-links,
+.content .row:nth-child(2) .mega-links {
+    border-left: none;
+}
+
+.row .mega-links li a{
+    padding: 0 20px;
+    font-size: 17px;
+    display: block;
+}
+
+.header-right{
+    flex: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0; /* FIX 11: tránh ô search đẩy tràn */
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #F8F9FA;
+}
+
+.container{
+    position: relative;
+    width: 480px;
+    background-color: #FFF;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+.heading{
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 40px;
+    color: #333;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 50px;
+}
+.entryarea{
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    margin: 12px 0;
+}
+.entryarea input{
+    outline: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    font-size: 1.2em;
+    line-height: 20px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 20px;  
+    padding-right: 5em;
+    background: transparent;
+    transition: 0.1 ease;
+}
+.entryarea input:focus, 
+.entryarea input:valid{
+    border-color: #3795ff;
+    border: 3px solid #3795ff;
+    color: #3795ff;
+}
+
+.entryarea input:focus + .labelline, 
+.entryarea input:valid+ .labelline{
+    color: #3795ff;
+    transform: translate(-8px, -15px) scale(0.88);
+    height: 30px;
+    line-height: 30px;
+    z-index: 1111;
+}
+
+.entryarea .uil{
+    position: absolute;
+    right: 30px;
+    font-size: 1.8em;
+    z-index: 11px;
+    color: rgba(0,0,0,0.5);
+}
+.entryarea .labelline{
+    position: absolute;
+    font-size: 1.2em;
+    color: rgba(0,0,0,0.6);
+    padding: 0 5px;
+    margin: 0 20px;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+#btn{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background-color: #3a3a3a;
+    color: #fff;
+    padding: 16px 0;
+    cursor: pointer;
+}
+
+
+
+
+.footer {
+    background-color: #333;
+    padding: 40px 60px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    font-size: 14px;
+    color: #CCC
+}
+
+.footer h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.footer a {
+    display: block;
+    color: #CCC;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer .column {
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .mega-box,
+    .mega-menu,
+    .top-about{
+        display: none;
+    }
+
+    .footer{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .mega-box,
+    .mega-menu,
+    .top-about{
+        display: none;
+    }
+}

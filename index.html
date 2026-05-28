@@ -6,54 +6,57 @@
     <title>S-cool</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    
 </head>
 <body>
+    
     <header>
-        
-
+        <div id="toast-cart" class="toast-cart">
+            Đã thêm sản phẩm vào giỏ hàng
+        </div>
         <div class="header-top">
             
             
             <div class="header-top-left">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="header-hover">
                             <p>VỀ S-COOL</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="header-hover">
                             <p>CXP BY S-COOL</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="header-hover">
                             <p>CARE&SHARE</p>
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="header-top-right">
-
+                <a href="login.html">Đăng Nhập</a> |
+                <a href="signup.html">Đăng ký</a>
             </div>
 
         </div>
 
         <div class="wapper">
             
-            <div class="logo"><a href="#">Logo</a></div>
+            <div class="logo"><a href="#">S-Cool</a></div>
             <ul class="nav-links">
                 <li class="has-drop">
                     <a href="">NAM</a>
                     <ul class="drop-menu">
-                        <li><a href="">Menu</a></li>
-                        <li><a href="">Picklaball</a></li>
-                        <li><a href="">Quần lót</a></li>
-                        <li><a href="">Chạy bộ</a></li>
+                        <li><a href="index.html">Menu</a></li>
+                        <li><a href="#picklaball">Picklaball</a></li>
+                        <li><a href="#quanlot">Quần lót</a></li>
+                        <li><a href="#running">Chạy bộ</a></li>
                     </ul>
                 </li>
-                <li><a href="">NỮ</a></li>
+                <li><a href="chitiet.html?id=2">NỮ</a></li>
                 <li class="mega-menu">
                     <a href="">MEGA MENU</a>
                     <div class="mega-box">
@@ -64,21 +67,21 @@
                             <div class="row">
                                 <header>PICKLABALL</header>
                                 <ul class="mega-links">
-                                    <li><a href="">Đồ Nam Picklaball</a></li>
-                                    <li><a href="">Đồ Nữ Picklaball</a></li>
-                                    <li><a href="">Tất Picklaball</a></li>
-                                    <li><a href="">Váy Picklaball</a></li>
-                                    <li><a href="">Short Picklaball</a></li>
+                                    <li><a href="chitiet.html?id=5">Đồ Nam Picklaball</a></li>
+                                    <li><a href="chitiet.html?id=2">Đồ Nữ Picklaball</a></li>
+                                    <li><a href="chitiet.html?id=6">Tất Picklaball</a></li>
+                                    <li><a href="chitiet.html?id=3">Váy Picklaball</a></li>
+                                    <li><a href="chitiet.html?id=1">Short Picklaball</a></li>
                                 </ul>
                             </div>
                             <div class="row">
                                 <header>QUẦN LÓT NAM</header>
                                 <ul class="mega-links">
-                                    <li><a href="">Quần lót Nam Trunk Lenzing Modal</a></li>
-                                    <li><a href="">Quần lót Nam Trunk AirMax Mesh</a></li>
-                                    <li><a href="">Quần lót Nam Trunk Bamboo</a></li>
-                                    <li><a href="">Quần lót Nam Trunk Excool</a></li>
-                                    <li><a href="">Quần lót Nam Brief Lenzing Modal</a></li>
+                                    <li><a href="chitiet.html?id=21">Quần lót Nam Trunk Lenzing Modal</a></li>
+                                    <li><a href="chitiet.html?id=20">Quần lót Nam Trunk AirMax Mesh</a></li>
+                                    <li><a href="chitiet.html?id=22">Quần lót Nam Trunk Bamboo</a></li>
+                                    <li><a href="chitiet.html?id=25">Quần lót Nam Trunk Excool</a></li>
+                                    <li><a href="chitiet.html?id=23">Quần lót Nam Brief Lenzing Modal</a></li>
                                 </ul>
                             </div>
                             <div class="row">
@@ -94,23 +97,17 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="top-accessory">PHỤ KIỆN</a></li>
-                <li class="top-about"><a href="">1ST STORE</a></li>
+                <li><a href="#">PHỤ KIỆN</a></li>
+                <li class="top-about"><a href="#">1ST STORE</a></li>
+                <li>
+                    <a href="donhang.html" class="cart-menu">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
             </ul>
             
 
-            <!-- <div class="header-right">
-
-                <div class="search">
-                    <input type="text" placeholder="Tìm kiếm..." >
-                    <i class="fa fa-search"></i>
-
-                </div>
-                <div class="cart">
-
-                </div>
-
-            </div> -->
 
         </div>
 
@@ -190,42 +187,42 @@
     
                 <a href="https://google.com" class="product-title-card">
                     <div class="img-wrapper">
-                        <img src="/images/header/Ao_Polo1.5x.avif">
+                        <img src="./images/header/Ao_Polo1.5x.avif">
                     </div>
                     <p>ÁO POLO</p>
                 </a>
 
                 <a href="#" class="product-title-card">
                     <div class="img-wrapper">
-                        <img src="/images/header/Ao_So_mi1.5x.avif">
+                        <img src="./images/header/Ao_So_mi1.5x.avif">
                     </div>
                     <p>ÁO THUN</p>
                 </a>
 
                 <a href="#" class="product-title-card">
                     <div class="img-wrapper">
-                        <img src="/images/header/Ao_Thun1.5x.avif">
+                        <img src="./images/header/Ao_Thun1.5x.avif">
                     </div>
                     <p>QUẦN SHORTS</p>
                 </a>
 
                 <a href="https://google.com" class="product-title-card">
                     <div class="img-wrapper">
-                        <img src="/images/header/fiffaAo_Thun1.5x.avif">
+                        <img src="./images/header/fiffaAo_Thun1.5x.avif">
                     </div>
                     <p>ÁO SƠ MI</p>
                 </a>
 
                 <a href="#" class="product-title-card">
                     <div class="img-wrapper">
-                        <img src="/images/header/Quan_dai1.5x.avif">
+                        <img src="./images/header/Quan_dai1.5x.avif">
                     </div>
                     <p>QUẦN DÀI</p>
                 </a>
 
                 <a href="#" class="product-title-card">
                     <div class="img-wrapper">
-                        <img src="/images/header/Quan_Shorts1.5x.avif">
+                        <img src="./images/header/Quan_Shorts1.5x.avif">
                     </div>
                     <p>QUẦN LÓT</p>
                 </a>
@@ -255,7 +252,7 @@
             <img src="./images/banner/summer_xam1.PICKLEBALL_HOME.avif" alt="">
         </section>
 
-        <section class="product">
+        <section class="product" id="picklaball">
             <h1>Sản phẩm Pickleball</h1>
             <div id="danhMucPickleball" class="product-list"></div>
         </section>
@@ -264,7 +261,7 @@
             <img src="./images/banner/summer_xam4.UNDERWEAR_HOMEdeskfewofwipvhbpiwrhv.avif" alt="">
         </section>
 
-        <section class="product">
+        <section class="product" id="quanlot">
             <h1>Sản phẩm Quần lót Nam</h1>
             <div id="danhMucQuanLot" class="product-list"></div>
         </section>
@@ -273,13 +270,16 @@
             <img src="./images/banner/summer_xam2.RUNNUNG_HOME.avif" alt="">
         </section>
 
-        <section class="product">
+        <section class="product" id="running">
             <h1>Sản phẩm Chạy bộ</h1>
             <div id="danhMucChayBo" class="product-list"></div>
         </section>
 
         <section class="banner-end">
             <img src="./images/banner/treem.avif" alt="">
+        </section>
+        <section class="cart">
+            <img src="./images/zalo.png" alt="">  
         </section>
     </main>
     <footer class="footer">
@@ -330,12 +330,7 @@
         </div>
 
         <div class="column-address">
-            <h4>ĐỊA CHỈ LIÊN HỆ</h4>
-            <a href="#">Cửa hàng: B2-34, Tầng B2, Hanoi Centre, 175 Nguyễn Thái Học, Đống Đa, Hà Nội</a>
-            <a href="#">Văn phòng Hà Nội: Tầng 3-4, Tòa nhà BMM, Km2, Đường Phùng Hưng, Hà Đông</a>
-            <a href="#">Trung tâm vận hành Hà Nội: Lô C8, KCN Lại Yên, Hoài Đức</a>
-            <a href="#">Văn phòng & vận hành TP.HCM: Lô C3, KCN Cát Lái, TP. Thủ Đức</a>
-        </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119284.74987769792!2d105.87506351571486!3d20.886216076381615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a30555555555%3A0x39a8acd006ab8e69!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTxrAgUGjhuqFtIEvhu7kgVGh14bqtdCBIxrBuZyBZw6puLCBDxqEgc-G7nyAy!5e0!3m2!1svi!2s!4v1775621441493!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <script src="list.js"></script>
         <script>
             function danhMuc(tenDanhMuc, sanPham){
@@ -360,6 +355,71 @@
                     </div>
                 `).join("");
             }
+
+            // js giỏ hàng 
+            function layGioHang() {
+                return JSON.parse(localStorage.getItem("gioHang")) || [];
+            }
+
+            function luuGioHang(gioHang) {
+                localStorage.setItem("gioHang", JSON.stringify(gioHang));
+            }
+
+            function capNhatSoGioHang() {
+                const gioHang = layGioHang();
+
+                const tongSoLuong = gioHang.reduce((tong, sp) => {
+                    return tong + sp.soLuong;
+                }, 0);
+
+                const cartCount = document.getElementById("cart-count");
+
+                if (cartCount) {
+                    cartCount.innerText = tongSoLuong;
+                }
+            }
+
+            function hienThongBaoGioHang() {
+                const toast = document.getElementById("toast-cart");
+
+                if (!toast) return;
+
+                toast.classList.add("show");
+
+                setTimeout(() => {
+                    toast.classList.remove("show");
+                }, 1500);
+            }
+
+            function themVaoGio(id) {
+                const sp = danhSachSanPham.find(item => item.id === id);
+                if (!sp) return;
+
+                let gioHang = layGioHang();
+
+                const spDaCo = gioHang.find(item => item.id === id);
+
+                if (spDaCo) {
+                    spDaCo.soLuong += 1;
+                } else {
+                    gioHang.push({
+                        id: sp.id,
+                        tenSanPham: sp.tenSanPham,
+                        gia: sp.gia,
+                        hinhAnh: sp.hinhAnh1,
+                        soLuong: 1
+                    });
+                }
+
+                luuGioHang(gioHang);
+                capNhatSoGioHang();
+                hienThongBaoGioHang();
+            }
+
+            capNhatSoGioHang();
+
+
+            capNhatSoGioHang();
             danhMuc("Pickleball", "danhMucPickleball");
             danhMuc("QuanLot", "danhMucQuanLot");
             danhMuc("ChayBo", "danhMucChayBo");

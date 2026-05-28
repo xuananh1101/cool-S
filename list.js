@@ -15,7 +15,7 @@ const danhSachSanPham = [
         gia: 223000,
         hinhAnh1: "./images/Pickleball/ao-tank-top-nu-pkb-exdry-classics-6_2-navy.jpg",
         hinhAnh2: "./images/Pickleball/ao-tank-top-nu-pkb-exdry-classics-5_2-navy.jpg",
-        moTa: "#",
+        moTa: "hàng cho gái xinh",
     },
     {
         id: 3,
@@ -53,6 +53,8 @@ const danhSachSanPham = [
         hinhAnh2: "./images/Pickleball/tat-the-thao-co-trung-nam-pkb-court-black-3-den-phoi-trang_56.avif",
         moTa: "#",
     },
+
+    
 
     // QUẦN LÓT
     {
@@ -107,67 +109,64 @@ const danhSachSanPham = [
         gia: 263000,
         hinhAnh1: "./images/QuanLot/excool-1.jpg",
         hinhAnh2: "./images/QuanLot/excool.avif",
-        moTa: "ombo 3 Quần Lót Nam Trunk Excool Microfiber Seamless là lựa chọn tối ưu, mang đến sự thoải mái, thoáng mát và khả năng kháng khuẩn vượt trội cho phái mạnh. Sản phẩm được ưa chuộng bởi hơn 10.000 khách hàng nhờ chất liệu mềm mịn, co giãn và công nghệ Seamless độc đáo. Chiếc quần lót này hội tụ tinh hoa thiết kế của Coolmate, với sự thoải mái và tiện lợi đặt lên hàng đầu. Với thành phần chính gồm 86% Microfiber siêu mịn, mát và 14% vải Spandex co giãn, bền bỉ, chiếc quần lót nam này không chỉ mang lại cảm giác dễ chịu mà còn sở hữu nhiều tính năng nổi bật.",
+        moTa: "Combo 3 Quần Lót Nam Trunk Excool Microfiber Seamless là lựa chọn tối ưu, mang đến sự thoải mái, thoáng mát và khả năng kháng khuẩn vượt trội cho phái mạnh. Sản phẩm được ưa chuộng bởi hơn 10.000 khách hàng nhờ chất liệu mềm mịn, co giãn và công nghệ Seamless độc đáo. Chiếc quần lót này hội tụ tinh hoa thiết kế của Coolmate, với sự thoải mái và tiện lợi đặt lên hàng đầu. Với thành phần chính gồm 86% Microfiber siêu mịn, mát và 14% vải Spandex co giãn, bền bỉ, chiếc quần lót nam này không chỉ mang lại cảm giác dễ chịu mà còn sở hữu nhiều tính năng nổi bật.",
     },
     
-    {
-        id: 40,
-        tenSanPham: "Combo 3 Quần Lót Nam Trunk Excool",
-        danhMuc: "ChayBo",
-        gia: 250000,
-        hinhAnh1: "./images/QuanLot/excool-1.jpg",
-        hinhAnh2: "./images/QuanLot/excool.avif",
-        moTa: "#",
-    },
+    // CHẠY BỘ
     
     {
         id: 41,
-        tenSanPham: "Combo 3 Quần Lót Nam Trunk Excool",
+        tenSanPham: "Quần shorts nữ chạy bộ 2 lớp Pace shorts 3.5IN",
         danhMuc: "ChayBo",
-        gia: 250000,
-        hinhAnh1: "./images/QuanLot/excool-1.jpg",
-        hinhAnh2: "./images/QuanLot/excool.avif",
-        moTa: "#",
+        gia: 379000,
+        hinhAnh2: "./images/run/3.webp",
+        hinhAnh1: "./images/run/4.jpg",
+        moTa: "Quần shorts nữ chạy bộ 2 lớp Pace Shorts 3.5IN được thiết kế chuyên biệt cho các vận động viên và người yêu thích chạy bộ. Với thiết kế 2 lớp thông minh, lớp ngoài giúp tăng tính thẩm mỹ và kín đáo, trong khi lớp lót ôm sát bên trong giúp chống ma sát và bảo vệ tối đa. Chất liệu vải nhẹ, thoát ẩm nhanh giúp bạn luôn khô thoáng trong suốt buổi tập.",
     },
-    
     {
         id: 42,
-        tenSanPham: "Combo 3 Quần Lót Nam Trunk Excool",
+        tenSanPham: "Tshirt thể thao nữ Quick Dry Tight",
         danhMuc: "ChayBo",
-        gia: 250000,
-        hinhAnh1: "./images/QuanLot/excool-1.jpg",
-        hinhAnh2: "./images/QuanLot/excool.avif",
-        moTa: "#",
+        gia: 239000,
+        hinhAnh2: "./images/run/5.webp",
+        hinhAnh1: "./images/run/6.webp",
+        moTa: "Áo thun thể thao nữ Quick Dry Tight sở hữu công nghệ làm mát tiên tiến, giúp cơ thể luôn khô ráo ngay cả trong những bài tập cường độ cao. Form dáng ôm vừa phải, chất vải co giãn 4 chiều mang lại sự linh hoạt tuyệt đối trong từng sải bước. Sản phẩm không chỉ hỗ trợ hiệu suất tập luyện mà còn mang phong cách năng động, hiện đại.",
     },
-    
     {
         id: 43,
-        tenSanPham: "Combo 3 Quần Lót Nam Trunk Excool",
+        tenSanPham: "Tshirt chạy bộ nữ Graphic Sky",
         danhMuc: "ChayBo",
-        gia: 250000,
-        hinhAnh1: "./images/QuanLot/excool-1.jpg",
-        hinhAnh2: "./images/QuanLot/excool.avif",
-        moTa: "#",
+        gia: 239000,
+        hinhAnh2: "./images/run/7.avif",
+        hinhAnh1: "./images/run/8.webp",
+        moTa: "Tshirt chạy bộ nữ Graphic Sky kết hợp giữa hiệu năng vượt trội và thiết kế thời thượng với họa tiết bắt mắt. Sử dụng chất liệu vải sợi tổng hợp cao cấp có khả năng thấm hút mồ hôi cực nhanh, chiếc áo này là người bạn đồng hành lý tưởng cho những buổi chạy bộ buổi sáng hoặc tham gia các sự kiện marathon cùng bạn bè.",
     },
-    
     {
         id: 44,
-        tenSanPham: "Combo 3 Quần Lót Nam Trunk Excool",
+        tenSanPham: "Tshirt chạy bộ nam Gradient",
         danhMuc: "ChayBo",
-        gia: 250000,
-        hinhAnh1: "./images/QuanLot/excool-1.jpg",
-        hinhAnh2: "./images/QuanLot/excool.avif",
-        moTa: "#",
+        gia: 239000,
+        hinhAnh2: "./images/run/9.avif",
+        hinhAnh1: "./images/run/10.webp",
+        moTa: "Tshirt chạy bộ nam Gradient nổi bật với thiết kế phối màu chuyển sắc độc đáo. Sản phẩm được nghiên cứu kỹ lưỡng để tối ưu hóa sự thông thoáng, giúp luồng khí lưu thông tốt hơn trong quá trình chạy. Vải nhẹ, mềm mại với làn da, không gây hầm bí, giúp nam giới tự tin chinh phục mọi cung đường.",
     },
-    
     {
         id: 45,
-        tenSanPham: "Combo 3 Quần Lót Nam Trunk Excool",
+        tenSanPham: "Áo thun chạy bộ nam Airflow Exdry Gradient",
         danhMuc: "ChayBo",
-        gia: 250000,
-        hinhAnh1: "./images/QuanLot/excool-1.jpg",
-        hinhAnh2: "./images/QuanLot/excool.avif",
-        moTa: "#",
+        gia: 299000,
+        hinhAnh2: "./images/run/11.webp",
+        hinhAnh1: "./images/run/12.webp",
+        moTa: "Áo thun nam Airflow Exdry Gradient tích hợp công nghệ làm mát đột phá, giúp giảm nhiệt cơ thể nhanh chóng khi vận động. Chất liệu vải đặc biệt với cấu trúc dệt thông minh giúp đẩy mồ hôi ra ngoài bề mặt vải, đảm bảo bạn luôn thoải mái, không bết dính. Thiết kế nam tính, mạnh mẽ phù hợp với cả chạy bộ và tập gym.",
+    },
+    {
+        id: 46,
+        tenSanPham: "Tshirt chạy bộ nữ Exdry AeroDot Gradient",
+        danhMuc: "ChayBo",
+        gia: 239000,
+        hinhAnh2: "./images/run/1.avif",
+        hinhAnh1: "./images/run/2.jpg",
+        moTa: "Tshirt chạy bộ nữ Exdry AeroDot Gradient với công nghệ lỗ thoát khí li ti (AeroDot) giúp tăng cường khả năng thoáng khí gấp nhiều lần so với vải thông thường. Đây là sự lựa chọn hoàn hảo cho những ngày hè nắng nóng. Thiết kế thời trang, trẻ trung cùng khả năng khử mùi tốt giúp bạn luôn tự tin sau mỗi buổi tập luyện.",
     },
     
 ];

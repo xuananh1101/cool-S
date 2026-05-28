@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng & Đặt hàng</title>
+    <link rel="stylesheet" href="donhang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-top">
+        <div class="header-top-left">
+            <ul>
+                <li><a href="#">VỀ S-COOL</a></li>
+                <li><a href="#">CXP BY S-COOL</a></li>
+                <li><a href="#">CARE&SHARE</a></li>
+            </ul>
+        </div>
+
+        <div class="header-top-right">
+            <a href="login.html">Đăng Nhập</a> |
+            <a href="signup.html">Đăng ký</a>
+        </div>
+    </div>
+
+    <div class="wapper">
+        <div class="logo">
+            <a href="index.html">S-COOL</a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">NAM</a></li>
+            <li><a href="chitiet.html?id=2">NỮ</a></li>
+            <li><a href="#">PHỤ KIỆN</a></li>
+            <li><a href="#">1ST STORE</a></li>
+            <li>
+                <a href="donhang.html" class="cart-menu">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<main class="cart-page">
+    <div class="cart-header">
+        <div>
+            <p class="sub-title">S-Cool Shopping Cart</p>
+            <h1>Giỏ hàng của bạn</h1>
+            <p>Kiểm tra sản phẩm, số lượng và hoàn tất thông tin đặt hàng.</p>
+        </div>
+
+        <a href="index.html" class="back-home">
+            <i class="fa-solid fa-arrow-left"></i>
+            Tiếp tục mua sắm
+        </a>
+    </div>
+
+    <div class="cart-layout">
+        <section class="cart-list" id="cart-list"></section>
+
+        <aside class="checkout-box">
+            <h2>Thông tin nhận hàng</h2>
+
+            <div class="form-group">
+                <label>Họ và tên</label>
+                <input type="text" id="tenKhachHang" placeholder="Nhập họ tên của bạn">
+            </div>
+
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="text" id="soDienThoai" placeholder="Nhập số điện thoại">
+            </div>
+
+            <div class="form-group">
+                <label>Địa chỉ nhận hàng</label>
+                <textarea id="diaChi" placeholder="Nhập địa chỉ giao hàng"></textarea>
+            </div>
+
+            <div class="summary">
+                <div>
+                    <span>Số sản phẩm</span>
+                    <strong id="tong-so-luong">0</strong>
+                </div>
+
+                <div>
+                    <span>Tạm tính</span>
+                    <strong id="tam-tinh">0đ</strong>
+                </div>
+
+                <div class="summary-total">
+                    <span>Tổng tiền</span>
+                    <strong id="tong-tien">0đ</strong>
+                </div>
+            </div>
+
+            <button class="order-btn" onclick="datHang()">
+                Đặt hàng
+            </button>
+        </aside>
+    </div>
+</main>
+
+<footer class="footer">
+    <div>
+        <h4>COOLCLUB</h4>
+        <a href="#">Tài khoản CoolClub</a>
+        <a href="#">Đăng kí thành viên</a>
+        <a href="#">Ưu đãi & Đặc quyền</a>
+
+        <h4>TÀI LIỆU - TUYỂN DỤNG</h4>
+        <a href="#">Tuyển dụng</a>
+        <a href="#">Đăng ký bản quyền</a>
+    </div>
+
+    <div>
+        <h4>CHÍNH SÁCH</h4>
+        <a href="#">Chính sách đổi trả tại cửa hàng</a>
+        <a href="#">Chính sách đổi trả 60 ngày online</a>
+        <a href="#">Chính sách khuyến mãi</a>
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Chính sách giao hàng</a>
+    </div>
+
+    <div>
+        <h4>CHĂM SÓC KHÁCH HÀNG</h4>
+        <a href="#">Trải nghiệm mua sắm 100% hài lòng</a>
+        <a href="#">Hỏi đáp - FAQs</a>
+
+        <h4>KIẾN THỨC MẶC ĐẸP</h4>
+        <a href="#">Hướng dẫn chọn size</a>
+        <a href="#">Blog</a>
+    </div>
+
+    <div>
+        <h4>VỀ S-COOL</h4>
+        <a href="#">Câu chuyện về S-Cool</a>
+        <a href="#">Nhà máy</a>
+        <a href="#">Care & Share</a>
+        <a href="#">Cam kết bền vững</a>
+        <a href="#">Tầm nhìn 2030</a>
+    </div>
+
+    <div>
+        <h4>LIÊN HỆ</h4>
+        <p>Hotline: 1900 0000</p>
+        <p>Email: support@s-cool.vn</p>
+        <p>Địa chỉ: Hà Nội, Việt Nam</p>
+    </div>
+</footer>
+
+<div id="toast" class="toast">Đặt hàng thành công!</div>
+
+<script>
+    let gioHang = JSON.parse(localStorage.getItem("gioHang")) || [];
+
+    const cartList = document.getElementById("cart-list");
+    const tongSoLuongEl = document.getElementById("tong-so-luong");
+    const tamTinhEl = document.getElementById("tam-tinh");
+    const tongTienEl = document.getElementById("tong-tien");
+    const cartCountEl = document.getElementById("cart-count");
+
+    function luuGioHang() {
+        localStorage.setItem("gioHang", JSON.stringify(gioHang));
+    }
+
+    function capNhatSoGioHang() {
+        const tong = gioHang.reduce((sum, sp) => sum + sp.soLuong, 0);
+        cartCountEl.innerText = tong;
+    }
+
+    function renderGioHang() {
+        let tongTien = 0;
+        let tongSoLuong = 0;
+
+        if (gioHang.length === 0) {
+            cartList.innerHTML = `
+                <div class="empty-cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <h2>Giỏ hàng đang trống</h2>
+                    <p>Hãy quay lại trang chủ để chọn sản phẩm bạn thích.</p>
+                    <a href="index.html">Mua sắm ngay</a>
+                </div>
+            `;
+
+            tongSoLuongEl.innerText = 0;
+            tamTinhEl.innerText = "0đ";
+            tongTienEl.innerText = "0đ";
+            capNhatSoGioHang();
+            return;
+        }
+
+        cartList.innerHTML = gioHang.map(sp => {
+            const thanhTien = sp.gia * sp.soLuong;
+            tongTien += thanhTien;
+            tongSoLuong += sp.soLuong;
+
+            return `
+                <div class="cart-item">
+                    <img src="${sp.hinhAnh}" alt="${sp.tenSanPham}">
+
+                    <div class="item-info">
+                        <h3>${sp.tenSanPham}</h3>
+                        <p>${sp.gia.toLocaleString()}đ</p>
+
+                        <div class="size-box">
+                            <label>Kích cỡ:</label>
+                            <select>
+                                <option value="S">Size S</option>
+                                <option value="M">Size M</option>
+                                <option value="L" selected>Size L</option>
+                                <option value="XL">Size XL</option>
+                            </select>
+                        </div>
+
+                        <div class="quantity-box">
+                            <button onclick="giamSoLuong(${sp.id})">−</button>
+                            <span>${sp.soLuong}</span>
+                            <button onclick="tangSoLuong(${sp.id})">+</button>
+                        </div>
+                    </div>
+
+                    <div class="item-right">
+                        <strong>${thanhTien.toLocaleString()}đ</strong>
+                        <button onclick="xoaSanPham(${sp.id})">
+                            <i class="fa-solid fa-trash"></i>
+                            Xóa
+                        </button>
+                    </div>
+                </div>
+            `;
+        }).join("");
+
+        tongSoLuongEl.innerText = tongSoLuong;
+        tamTinhEl.innerText = tongTien.toLocaleString() + "đ";
+        tongTienEl.innerText = tongTien.toLocaleString() + "đ";
+        capNhatSoGioHang();
+    }
+
+    function tangSoLuong(id) {
+        const sp = gioHang.find(item => item.id === id);
+        if (sp) {
+            sp.soLuong++;
+            luuGioHang();
+            renderGioHang();
+        }
+    }
+
+    function giamSoLuong(id) {
+        const sp = gioHang.find(item => item.id === id);
+        if (!sp) return;
+
+        sp.soLuong--;
+
+        if (sp.soLuong <= 0) {
+            gioHang = gioHang.filter(item => item.id !== id);
+        }
+
+        luuGioHang();
+        renderGioHang();
+    }
+
+    function xoaSanPham(id) {
+        gioHang = gioHang.filter(item => item.id !== id);
+        luuGioHang();
+        renderGioHang();
+    }
+
+    function hienToast(text) {
+        const toast = document.getElementById("toast");
+        toast.innerText = text;
+        toast.classList.add("show");
+
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 1800);
+    }
+
+    function datHang() {
+        const tenKhachHang = document.getElementById("tenKhachHang").value.trim();
+        const soDienThoai = document.getElementById("soDienThoai").value.trim();
+        const diaChi = document.getElementById("diaChi").value.trim();
+
+        if (gioHang.length === 0) {
+            hienToast("Giỏ hàng đang trống!");
+            return;
+        }
+
+        if (!tenKhachHang || !soDienThoai || !diaChi) {
+            hienToast("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
+        const tongTien = gioHang.reduce((tong, sp) => {
+            return tong + sp.gia * sp.soLuong;
+        }, 0);
+
+        const donHang = {
+            tenKhachHang,
+            soDienThoai,
+            diaChi,
+            sanPham: gioHang,
+            tongTien,
+            ngayDat: new Date().toLocaleString("vi-VN")
+        };
+
+        let danhSachDonHang = JSON.parse(localStorage.getItem("donHangDaDat")) || [];
+        danhSachDonHang.push(donHang);
+
+        localStorage.setItem("donHangDaDat", JSON.stringify(danhSachDonHang));
+        localStorage.removeItem("gioHang");
+
+        gioHang = [];
+        renderGioHang();
+
+        document.getElementById("tenKhachHang").value = "";
+        document.getElementById("soDienThoai").value = "";
+        document.getElementById("diaChi").value = "";
+
+        hienToast("Đặt hàng thành công!");
+    }
+
+    renderGioHang();
+</script>
+
+</body>
+</html>
