@@ -680,6 +680,15 @@ main {
     .product-title-card {
         width: 100%;
     }
+
+    .product-title-1{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .header-top-left{
+        display: none;
+    }
     .product-title-card p {
         font-size: 14px;
     }
@@ -712,6 +721,10 @@ main {
     }
     .product-title-2 {
         flex-direction: column;
+    }
+    .cart img{
+        width: 70px;
+        height: 70px;
     }
     .mega-box,
     .mega-menu,

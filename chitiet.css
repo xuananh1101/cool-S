@@ -540,6 +540,10 @@ header {
         gap: 10px;
         padding: 15px;
     }
+
+    .logo {
+        display: none;
+    }
     .product-gallery {
         flex-direction: column-reverse;
     }
