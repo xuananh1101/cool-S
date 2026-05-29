@@ -722,6 +722,9 @@ main {
     .product-title-2 {
         flex-direction: column;
     }
+    .logo{
+        font-size: 16px;
+    }
     .cart img{
         width: 70px;
         height: 70px;
