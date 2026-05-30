@@ -20,17 +20,15 @@ header {
     z-index: 1000;
 }
 
-/* --- PHẦN SỬA ĐÚNG Ý ÔNG TẠI ĐÂY --- */
 .header-top {
     background-color: #737373;
     width: 100%;
     height: 30px;
     display: flex;
-    align-items: stretch; /* Ép phần tử con căng hết chiều cao 30px */
+    align-items: stretch;
     justify-content: space-between;
 }
 
-/* Bên trái giữ nguyên không đổi */
 .header-top-left {
     display: flex;
     align-items: center;
@@ -51,7 +49,6 @@ header {
     font-size: 15px;
 }
 
-/* Chỉ xử lý riêng biệt phần Đăng nhập / Đăng ký bên phải */
 .header-top-right {
     margin-right: 50px;
     color: white;
@@ -65,15 +62,14 @@ header {
     font-size: 15px;
     display: flex;
     align-items: center;
-    height: 100%;       /* Căng bằng chiều cao lớp mẹ (30px) */
-    padding: 0 15px;    /* Thêm khoảng trống 2 bên để khi hover nhìn cân đối */
+    height: 100%; 
+    padding: 0 15px; 
     transition: background-color 0.2s;
 }
 
 .header-top-right a:hover {
-    background-color: #3a3a3a; /* Nền xám phủ kín 30px */
+    background-color: #3a3a3a;
 }
-/* --- HẾT PHẦN SỬA --- */
 
 /* Mega menu */
 .wapper {
@@ -110,7 +106,7 @@ header {
     font-weight: bold;
     padding: 9px 15px;
     background: #FFF;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .nav-links li a:hover {
@@ -572,8 +568,8 @@ main {
 }
 
 .cart img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 200px;
 }
 
@@ -673,20 +669,63 @@ main {
 
 /* Mobile */
 @media (max-width: 767px) {
+    /* ============================================================== */
+    /* PHẦN SỬA BANNER THEO ĐÚNG Ý ÔNG (ZOOM TO, ĐẸP CHUẨN COOLMATE) */
+    /* ============================================================== */
+    
+    /* 1. Sửa Banner chính (banner-1) */
+    /* 1. Banner chính (banner-1) */
+    .banner-1 {
+        width: 100%;
+        height: 125vw;       /* Điều chỉnh lại chiều cao một chút cho cân đối */
+        overflow: hidden;    
+        position: relative;
+    }
+
+    .banner-1 a {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+
+    .banner-1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;            
+        object-position: right center; /* Ép camera dịch sang rìa PHẢI của ảnh */
+        transform: scale(1.2);        /* Phóng to lên 1.2 lần để thấy rõ nhân vật */
+    }
+
+    /* 2. Banner phụ (.banner) */
+    .banner {
+        margin-top: 40px;             
+        width: 100%;
+        height: 125vw;                
+        overflow: hidden;
+    }
+
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Nếu muốn dịch sâu hơn nữa vào bên phải, có thể dùng tỉ lệ % (ví dụ: 85%) */
+        object-position: 85% center;  
+        transform: scale(1.1);        
+    }
+    
+    /* ============================================================== */
+    /* HẾT PHẦN SỬA BANNER - CÁC CODE KHÁC GIỮ NGUYÊN */
+    /* ============================================================== */
+
     .product-title-1 {
-        grid-template-columns: repeat(2, 1fr);
         gap: 14px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
     .product-title-card {
         width: 100%;
     }
-
-    .product-title-1{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .header-top-left{
+    .header-top-left {
         display: none;
     }
     .product-title-card p {
@@ -697,12 +736,7 @@ main {
         gap: 16px;
     }
     .cate-wrap {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        justify-items: center;
-        align-items: center;
-        gap: 14px 10px;
-        padding: 0 12px;
+        display: none;
     }
     .cate-item {
         width: 60px;
@@ -715,19 +749,24 @@ main {
     .footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
+        padding: 30px 20px; /* Thu nhỏ padding cho vừa mobile */
     }
     .column-address {
         display: none;
     }
     .product-title-2 {
         flex-direction: column;
+        margin-top: 40px;
     }
-    .logo{
+    .logo {
         font-size: 14px;
     }
-    .cart img{
+    .cart img {
         width: 70px;
         height: 70px;
+    }
+    .categories {
+        height: 10px;
     }
     .mega-box,
     .mega-menu,
